@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn FRENCH</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+        }
+        .mcq-test {
+            padding: 20px;
+        }
+        .mcq-test ol {
+            padding-left: 20px;
+        }
+        #submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #homepage-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FRENCH MODULE</h1>
+        <div>
+            <button id="homepage-btn" onclick="location.href='programming_learning_website.html'">Homepage</button>
+            <button id="submit-btn">Submit Answers</button>
+        </div>
+    </header>
+
+    <div class="mcq-test">
+        <h2>Multiple Choice Questions</h2>
+        <ol>
+            <li>
+                <p>What does "Bonjour" mean in English?</p>
+                <ul>
+                    <li><input type="radio" name="q1" value="a"> a) Goodbye</li>
+                    <li><input type="radio" name="q1" value="b"> b) Thank you</li>
+                    <li><input type="radio" name="q1" value="c"> c) Hello</li>
+                    <li><input type="radio" name="q1" value="d"> d) Please</li>
+                </ul>
+            </li>
+            <li>
+                <p> Which of the following is the correct conjugation of the verb "être" (to be) for the subject "nous" (we)?</p>
+                <ul>
+                    <li><input type="radio" name="q2" value="a"> a) Je suis</li>
+                    <li><input type="radio" name="q2" value="b"> b) Tu es</li>
+                    <li><input type="radio" name="q2" value="c"> c) Nous sommes</li>
+                    <li><input type="radio" name="q2" value="d"> d) Ils sont</li>
+                </ul>
+            </li>
+            <li>
+                <p> In French, nouns are categorized into which two genders?</p>
+                <ul>
+                    <li><input type="radio" name="q3" value="a"> a) Masculine and feminine</li>
+                    <li><input type="radio" name="q3" value="b"> b) Singular and plural</li>
+                    <li><input type="radio" name="q3" value="c"> c) Formal and informal</li>
+                    <li><input type="radio" name="q3" value="d"> d) Verbs and adjectives</li>
+                </ul>
+            </li>
+            <li>
+                <p> When is Bastille Day celebrated in France?</p>
+                <ul>
+                    <li><input type="radio" name="q4" value="a"> a) June 14th</li>
+                    <li><input type="radio" name="q4" value="b"> b) July 4th</li>
+                    <li><input type="radio" name="q4" value="c"> c) July 14th</li>
+                    <li><input type="radio" name="q4" value="d"> d) August 15th</li>
+                </ul>
+            </li>
+            <li>
+                <p> What is the correct translation of "Excusez-moi"?</p>
+                <ul>
+                    <li><input type="radio" name="q5" value="a"> a) Thank you</li>
+                    <li><input type="radio" name="q5" value="b"> b) Please</li>
+                    <li><input type="radio" name="q5" value="c"> c) Excuse me</li>
+                    <li><input type="radio" name="q5" value="d"> d) I'm sorry</li>
+                </ul>
+            </li>
+          
+        </ol>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LLP all right reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", function() {
+         
+            const answers = document.querySelectorAll("input[type='radio']:checked");
+            let score = 0;
+
+          
+            answers.forEach(answer => {
+                const questionNumber = answer.name.split('q')[1];
+                const selectedAnswer = answer.value;
+                const correctAnswer = getCorrectAnswer(questionNumber);
+
+                if (selectedAnswer === correctAnswer) {
+                    score += 2;
+                }
+            });
+
+            alert(`Your score: ${score} / 10`);
+        });
+
+        
+        function getCorrectAnswer(questionNumber) {
+            switch (questionNumber) {
+                case "1":
+                    return "c";
+                case "2":
+                    return "c";
+                case "3":
+                    return "a";
+                case "4":
+                    return "c";
+                case "5":
+                    return "c";
+              
+            }
+        }
+    </script>
+</body>
+</html>
