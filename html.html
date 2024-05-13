@@ -16,9 +16,22 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: 20px;
+            right: 120px; /* Adjusted the position */
+            
         }
 
+        #logout-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            background-color: rgb(188, 34, 34); /* Set the background color to red */
+            color: white; /* Set text color to white */
+            border: none; /* Remove border */
+            padding: 8px 16px; /* Add padding for better appearance */
+            border-radius: 4px; /* Add border radius for rounded corners */
+            cursor: pointer;
+        }
         
         header a {
             text-decoration: none; 
@@ -40,6 +53,7 @@
             </ul>
         </nav>
         <button id="assignment-button">Take Assignment</button> 
+        <button id="logout-button">Logout</button> <!-- Added logout button -->
     </header>
 
 
@@ -111,6 +125,10 @@
     <script>
         document.getElementById("assignment-button").addEventListener("click", function() {
             window.location.href = "assignment.html"; 
+        });
+
+        document.getElementById("logout-button").addEventListener("click", function() {
+            window.location.href = "index.html"; // Redirects to index.html
         });
     </script>
 </body>
